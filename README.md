@@ -1,4 +1,12 @@
 # cit227
 Maddie Hartley</br>
 CIT 227</br>
-This Repository is for the programs for the Cit 227 Applied Programming class.
+This Repository is for the programs for the Cit 227 Applied Programming class.</br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sodales id dui vitae convallis. Mauris facilisis bibendum varius. Aliquam et tristique nibh, eu dignissim lacus. Quisque non aliquam ligula. Pellentesque ipsum ipsum, fringilla ac tempor id, aliquam sed tortor. Nunc eleifend eros in diam dapibus, quis viverra ex ornare. Nullam vel lorem eu turpis dignissim sollicitudin eget at felis. Cras placerat justo quis neque hendrerit, ac fringilla purus scelerisque. Maecenas aliquam, tellus quis lacinia vestibulum, felis quam eleifend urna, et interdum libero libero ac purus. Duis metus leo, convallis et dapibus vitae, venenatis et odio. Duis egestas nibh neque, at sodales metus accumsan in.
+
+Nullam tempor enim diam, sodales faucibus nisi ullamcorper quis. Praesent viverra erat sed ultricies suscipit. Mauris ut iaculis quam, non facilisis tellus. In nec maximus orci, sit amet varius felis. Ut ultricies quam velit, sit amet bibendum dui tempor vitae. Donec mattis nulla cursus, luctus velit eu, sollicitudin nisi. Sed eu neque eget est condimentum ornare ac at massa. Sed laoreet consectetur nisl venenatis iaculis. Suspendisse sit amet semper quam. In a dignissim nunc, et ultrices dolor. Sed nec sollicitudin quam.
+
+Suspendisse fermentum enim fringilla leo pellentesque, vel luctus lectus molestie. Phasellus lobortis tempus sapien ut lacinia. Donec non ex nec turpis semper aliquet. Ut bibendum, turpis eget scelerisque elementum, ex elit commodo eros, nec luctus nisl sapien sed tellus. Sed dapibus imperdiet neque commodo congue. Nunc nec nunc leo. Proin ut nisl eget arcu feugiat consectetur. Nunc facilisis porta leo vitae posuere. Vestibulum dapibus, erat dictum gravida ultricies, justo nisl auctor ex, eu lobortis mi velit posuere felis. Mauris ipsum ligula, tincidunt eu metus vel, tempus tincidunt ipsum. Suspendisse eu volutpat velit.
+
+Duis mi augue, imperdiet id semper et, convallis sit amet felis. Aliquam metus quam, tincidunt at condimentum sit amet, elementum quis urna. Proin pharetra molestie dui eu luctus. Maecenas finibus quis ipsum a euismod. Aliquam viverra sapien in dui finibus aliquet. Praesent in tortor eget turpis rhoncus faucibus. Sed pulvinar eu risus quis ultrices. Morbi finibus, turpis ac interdum dictum, nulla metus sollicitudin elit, at venenatis sapien felis vitae odio.
+
