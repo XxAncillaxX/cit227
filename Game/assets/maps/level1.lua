@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 3,
-  nextobjectid = 7,
+  nextobjectid = 8,
   properties = {
     ["background"] = "background 2",
     ["music"] = "frenetic",
@@ -537,6 +537,20 @@ return {
             ["collectible"] = "machineGun",
             ["points"] = 500
           }
+        },
+        {
+          id = 7,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 160.5,
+          y = 6305,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          gid = 7,
+          visible = true,
+          properties = {}
         }
       }
     }
