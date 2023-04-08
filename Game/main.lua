@@ -5,10 +5,11 @@ anim8 = require('library/anim8')
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
     input = Input()
+    input:bind('w', 'up')
+    input:bind('s', 'down')
     input:bind('d', 'right')
     input:bind('a', 'left')
     input:bind('space', 'action')
-
 
     hero = {
         x = 0,
@@ -17,6 +18,7 @@ function love.load()
         h = 0,
         speed = 0,
         topSpeed = 100,
+        facing = "right",
         Image = love.graphics.newImage("assets/graphics/hero.png"),
         --frame = 1
     }
@@ -24,12 +26,15 @@ function love.load()
     local grid = anim8.newGrid(16, 16, hero.Image:getDimensions())
     -- adding animations table to hero
     hero.animations = {
+        -- grid(4, '1-3') example using column instead of row
+        -- current grids use row method
         walk = anim8.newAnimation(grid('1-6', 2), 0.1),
         idle = anim8.newAnimation(grid('1-3', 1), 0.3),
-        swim = anim8.newAnimation(grid('1-6', 4), 0.25)
+        swim = anim8.newAnimation(grid('1-6', 4), 0.25),
+        attack = anim8.newAnimation(grid('1-3', 5), 100.00)
     }
-
-    hero.animation = hero.animations.swim
+    -- setting default animation for hero
+    hero.animation = hero.animations.walk
 
 --[[
     example of using quads
@@ -45,17 +50,6 @@ function love.load()
     timer = frameDuration
 ]]
 end--load
-
--- function to user Input
-function handleInput(dt)
-    if input:down('right') then
-        hero.speed = hero.topSpeed
-    elseif input:down('left') then
-        hero.speed = -hero.topSpeed
-    else
-        hero.speed = 0
-    end--if
-end--handleInput
 
 function love.update(dt)
     handleInput(dt)
@@ -82,6 +76,38 @@ function love.draw()
     hero.animation:draw(hero.Image, hero.x, hero.y, 0, 3, 3)
 end--draw
 
-function updateHero(rect, dt)
-    rect.x = rect.x + (rect.speed * dt)
+-- Additonal functions
+
+-- function to user Input
+function handleInput(dt)
+    if input:down('right') then
+        moveHero('right')
+    elseif input:down('left') then
+        moveHero('left')
+    elseif input:down('up') then
+        moveHero('up')
+    elseif input:pressed('action') then
+        hero.animation = hero.animations.attack
+    else
+        hero.speed = 0
+        hero.animation = hero.animations.idle
+    end--if
+end--handleInput
+
+function moveHero(dir)
+    hero.speed = hero.topSpeed
+    if (dir == "left") then
+        hero.speed = -hero.speed
+    end
+    hero.animation = hero.animations.walk
+    if (hero.facing ~= dir) then
+        hero.animation:flipH()
+        hero.animations.idle:flipH()
+        hero.facing = dir
+    end-- end hero.facing if
+end
+
+function updateHero(hero, dt)
+    hero.x = hero.x + (hero.speed * dt)
+    --hero.y = hero.y + (hero.speed * dt)
 end--updateHero
