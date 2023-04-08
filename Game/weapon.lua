@@ -13,7 +13,7 @@ end
 
 function Weapon:fire()
     -- create a bullet
-    local b = Bullet:Create(ship.x, ship.y, 0, -300)
+    local b = Bullet:Create(ship.x, ship.y, 0, -150)
     -- add it to the bullet table directly
     table.insert(bullets, b)
     self.timer = self.cooldown
