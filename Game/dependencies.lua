@@ -1,4 +1,4 @@
 Input = require('library/Input')
 anim8 = require('library/anim8')
-require('hero')
+require('ship')
 require('input_bindings')

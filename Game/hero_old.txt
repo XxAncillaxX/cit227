@@ -11,7 +11,7 @@ function love.load()
     input:bind('a', 'left')
     input:bind('space', 'action')
 
-    hero = {
+    Hero = {
         x = 0,
         y = 0,
         w = 0,
@@ -19,13 +19,13 @@ function love.load()
         speed = 0,
         topSpeed = 100,
         facing = "right",
-        Image = love.graphics.newImage("assets/graphics/hero.png"),
+        Image = love.graphics.newImage("assets/graphics/Hero.png"),
         --frame = 1
     }
     -- Setting up grid and anim8
-    local grid = anim8.newGrid(16, 16, hero.Image:getDimensions())
-    -- adding animations table to hero
-    hero.animations = {
+    local grid = anim8.newGrid(16, 16, Hero.Image:getDimensions())
+    -- adding animations table to Hero
+    Hero.animations = {
         -- grid(4, '1-3') example using column instead of row
         -- current grids use row method
         walk = anim8.newAnimation(grid('1-6', 2), 0.1),
@@ -33,18 +33,18 @@ function love.load()
         swim = anim8.newAnimation(grid('1-6', 4), 0.25),
         attack = anim8.newAnimation(grid('1-3', 5), 100.00)
     }
-    -- setting default animation for hero
-    hero.animation = hero.animations.walk
+    -- setting default animation for Hero
+    Hero.animation = Hero.animations.walk
 
 --[[
     example of using quads
     quads = {
-        love.graphics.newQuad(0, 16, 16, 16, hero.Image:getDimensions()),
-        love.graphics.newQuad(16, 16, 16, 16, hero.Image:getDimensions()),
-        love.graphics.newQuad(32, 16, 16, 16, hero.Image:getDimensions()),
-        love.graphics.newQuad(48, 16, 16, 16, hero.Image:getDimensions()),
-        love.graphics.newQuad(64, 16, 16, 16, hero.Image:getDimensions()),
-        love.graphics.newQuad(80, 16, 16, 16, hero.Image:getDimensions())
+        love.graphics.newQuad(0, 16, 16, 16, Hero.Image:getDimensions()),
+        love.graphics.newQuad(16, 16, 16, 16, Hero.Image:getDimensions()),
+        love.graphics.newQuad(32, 16, 16, 16, Hero.Image:getDimensions()),
+        love.graphics.newQuad(48, 16, 16, 16, Hero.Image:getDimensions()),
+        love.graphics.newQuad(64, 16, 16, 16, Hero.Image:getDimensions()),
+        love.graphics.newQuad(80, 16, 16, 16, Hero.Image:getDimensions())
     }
     frameDuration = 0.10
     timer = frameDuration
@@ -53,16 +53,16 @@ end--load
 
 function love.update(dt)
     handleInput(dt)
-    hero.animation:update(dt)
-    updateHero(hero, dt)
+    Hero.animation:update(dt)
+    updateHero(Hero, dt)
 
 --[[
     timer example to go with quads
     timer = timer - dt -- subtract the amount of time since the last frame
     if (timer <= 0) then -- if the timer expires, update the frame number
-        hero.frame = hero.frame + 1
-        if (hero.frame == 7) then
-            hero.frame = 1
+        Hero.frame = Hero.frame + 1
+        if (Hero.frame == 7) then
+            Hero.frame = 1
         end
         timer = frameDuration
     end
@@ -71,9 +71,9 @@ function love.update(dt)
 end--update
 
 function love.draw()
-    --local frame = love.graphics.newQuad(0, 0, 16, 16, hero.Image:getDimensions())
-    --love.graphics.draw(hero.Image, quads[hero.frame], hero.x, hero.y, 0, 3, 3)
-    hero.animation:draw(hero.Image, hero.x, hero.y, 0, 3, 3)
+    --local frame = love.graphics.newQuad(0, 0, 16, 16, Hero.Image:getDimensions())
+    --love.graphics.draw(Hero.Image, quads[Hero.frame], Hero.x, Hero.y, 0, 3, 3)
+    Hero.animation:draw(Hero.Image, Hero.x, Hero.y, 0, 3, 3)
 end--draw
 
 -- Additonal functions
@@ -87,27 +87,27 @@ function handleInput(dt)
     elseif input:down('up') then
         moveHero('up')
     elseif input:pressed('action') then
-        hero.animation = hero.animations.attack
+        Hero.animation = Hero.animations.attack
     else
-        hero.speed = 0
-        hero.animation = hero.animations.idle
+        Hero.speed = 0
+        Hero.animation = Hero.animations.idle
     end--if
 end--handleInput
 
 function moveHero(dir)
-    hero.speed = hero.topSpeed
+    Hero.speed = Hero.topSpeed
     if (dir == "left") then
-        hero.speed = -hero.speed
+        Hero.speed = -Hero.speed
     end
-    hero.animation = hero.animations.walk
-    if (hero.facing ~= dir) then
-        hero.animation:flipH()
-        hero.animations.idle:flipH()
-        hero.facing = dir
-    end-- end hero.facing if
+    Hero.animation = Hero.animations.walk
+    if (Hero.facing ~= dir) then
+        Hero.animation:flipH()
+        Hero.animations.idle:flipH()
+        Hero.facing = dir
+    end-- end Hero.facing if
 end
 
-function updateHero(hero, dt)
-    hero.x = hero.x + (hero.speed * dt)
-    --hero.y = hero.y + (hero.speed * dt)
+function updateHero(Hero, dt)
+    Hero.x = Hero.x + (Hero.speed * dt)
+    --Hero.y = Hero.y + (Hero.speed * dt)
 end--updateHero
