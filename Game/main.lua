@@ -21,5 +21,6 @@ function love.update(dt)
 end
 
 function love.draw()
-    love.graphics.draw(hero.image, hero.x, hero.y, 0, 3, 3)
+    local frame = love.graphics.newQuad(0, 0, 16, 16, hero.image:getDimensions())
+    love.graphics.draw(hero.image, frame, hero.x, hero.y, 0, 3, 3)
 end
