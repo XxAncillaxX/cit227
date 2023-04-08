@@ -20,7 +20,7 @@ function Weapon:fire()
 end
 
 function Weapon:update(dt)
-    self. timer = self.timer - dt
+    self.timer = self.timer - dt
     if input:down('fire') then
         if self.timer <= 0 then
             self:fire()
