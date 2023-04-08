@@ -9,9 +9,11 @@ function love.load()
 end--load
 
 function love.update(dt)
+    --updating hero object
     hero:update(dt)
 end--update
 
 function love.draw()
+    --drawing hero object
     hero:draw()
 end--draw
