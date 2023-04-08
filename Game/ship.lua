@@ -19,7 +19,7 @@ function Ship:Create()
         ySpeed = 0,
         topSpeed = 100,
         facing = "right",
-        Image = love.graphics.newImage("assets/graphics/spritesheets/ship.png"),
+        image = love.graphics.newImage("assets/graphics/spritesheets/ship.png"),
         animations = nil,
         animation = nil,
         time = 0,
@@ -27,7 +27,7 @@ function Ship:Create()
     }
 
     -- Setting up grid and anim8
-    local grid = anim8.newGrid(16, 24, this.Image:getDimensions())
+    local grid = anim8.newGrid(16, 24, this.image:getDimensions())
     local dur = 0.1
     -- adding animations table to Ship
     this.animations = {
@@ -84,5 +84,5 @@ end
 
 
 function Ship:draw()
-    self.animation:draw(self.Image, self.x, self.y)
+    self.animation:draw(self.image, self.x, self.y)
 end

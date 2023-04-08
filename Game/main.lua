@@ -12,7 +12,7 @@ function love.load()
     bullets = {}
 end--load
 
-function updateBullets()
+function updateBullets(dt)
     -- loop through the indexed pairs of a lua table
     -- very similar to loopin through a list/array by index number
     -- will eventually remove bullets here as well
@@ -25,7 +25,7 @@ function love.update(dt)
     --updating hero object
     --hero:update(dt)
     ship:update(dt)
-    updateBullets()
+    updateBullets(dt)
 end--update
 
 function love.draw()
@@ -33,6 +33,9 @@ function love.draw()
     love.graphics.setCanvas(gameCanvas)
         love.graphics.draw(bg, 0, 0)
         ship:draw()
+        for i, b in ipairs(bullets) do
+            b:draw()
+        end
     --back to Drawing on the screen
     love.graphics.setCanvas()
     love.graphics.draw(gameCanvas, 0, 0, 0, 2, 2)    
