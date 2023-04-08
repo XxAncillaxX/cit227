@@ -3,6 +3,7 @@ Input = require('library/Input')
 
 
 function love.load()
+    love.graphics.setDefaultFilter('nearest', 'nearest')
     input = Input()
 
     hero = {
