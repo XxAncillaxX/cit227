@@ -12,7 +12,8 @@ function Hero:Create()
     --this tells the code where to look up the code with in the Hero {}
     local this = {
         x = 0,
-        y = 0,
+        y = 80,
+        y_offSet = 0,
         w = 0,
         h = 0,
         speed = 0,
@@ -20,7 +21,8 @@ function Hero:Create()
         facing = "right",
         Image = love.graphics.newImage("assets/graphics/hero.png"),
         animations = nil,
-        animation = nil
+        animation = nil,
+        time = 0
     }
 
     -- Setting up grid and anim8
@@ -43,9 +45,11 @@ function Hero:Create()
 end
 
 function Hero:update(dt)
+    self.time = self.time + dt
     self:handleInput(dt)
     self.animation:update(dt)
     self.x = self.x + (self.speed * dt)
+    self.y_offSet = 60 * math.sin(self.time * 3)
 end
 
 function Hero:handleInput(dt)
@@ -77,5 +81,5 @@ function Hero:move(dir)
 end
 
 function Hero:draw()
-    self.animation:draw(self.Image, self.x, self.y, 0, 3, 3)
+    self.animation:draw(self.Image, self.x, self.y+self.y_offSet, 0, 3, 3)
 end
