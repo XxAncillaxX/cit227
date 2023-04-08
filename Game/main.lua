@@ -3,7 +3,7 @@ require('dependencies')
 
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
-    map = sti('assets/maps/level1.lua')
+    
     -- Creating the Hero Object
     --hero = Hero:Create()
     ship = Ship:Create()
