@@ -7,6 +7,7 @@ function love.load()
     -- Creating the Hero Object
     --hero = Hero:Create()
     ship = Ship:Create()
+    map = Map:Create("level1.lua", ship)
     bg = love.graphics.newImage("assets/graphics/backgrounds/parallax-space-background2.png")
     gameCanvas = love.graphics.newCanvas(270, 320)
 
@@ -33,8 +34,9 @@ end--update
 function love.draw()
     -- Drawing to the gameCanvas
     love.graphics.setCanvas(gameCanvas)
+        love.graphics.clear()
         map:draw()
-        love.graphics.draw(bg, 0, 0)
+        --love.graphics.draw(bg, 0, 0)
         ship:draw()
         for i, b in ipairs(bullets) do
             b:draw()

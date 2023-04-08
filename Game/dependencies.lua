@@ -6,4 +6,5 @@ require('input_bindings')
 require('bullet')
 require('weapon')
 require('ship')
+require('map')
 

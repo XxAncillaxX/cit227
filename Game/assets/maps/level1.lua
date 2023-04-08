@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 3,
-  nextobjectid = 6,
+  nextobjectid = 7,
   properties = {
     ["background"] = "background 2",
     ["music"] = "frenetic",
@@ -520,6 +520,23 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 6,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 48.5,
+          y = 65,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          gid = 1,
+          visible = true,
+          properties = {
+            ["collectible"] = "machineGun",
+            ["points"] = 500
+          }
         }
       }
     }
