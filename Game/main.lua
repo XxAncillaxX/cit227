@@ -41,12 +41,12 @@ function love.load()
         love.graphics.newQuad(64, 16, 16, 16, hero.Image:getDimensions()),
         love.graphics.newQuad(80, 16, 16, 16, hero.Image:getDimensions())
     }
-
     frameDuration = 0.10
     timer = frameDuration
 ]]
-end
+end--load
 
+-- function to user Input
 function handleInput(dt)
     if input:down('right') then
         hero.speed = hero.topSpeed
@@ -54,13 +54,14 @@ function handleInput(dt)
         hero.speed = -hero.topSpeed
     else
         hero.speed = 0
-    end
-end
+    end--if
+end--handleInput
 
 function love.update(dt)
     handleInput(dt)
     hero.animation:update(dt)
     updateHero(hero, dt)
+
 --[[
     timer example to go with quads
     timer = timer - dt -- subtract the amount of time since the last frame
@@ -72,14 +73,15 @@ function love.update(dt)
         timer = frameDuration
     end
 ]]
-end
+
+end--update
 
 function love.draw()
     --local frame = love.graphics.newQuad(0, 0, 16, 16, hero.Image:getDimensions())
     --love.graphics.draw(hero.Image, quads[hero.frame], hero.x, hero.y, 0, 3, 3)
     hero.animation:draw(hero.Image, hero.x, hero.y, 0, 3, 3)
-end
+end--draw
 
 function updateHero(rect, dt)
     rect.x = rect.x + (rect.speed * dt)
-end
+end--updateHero
