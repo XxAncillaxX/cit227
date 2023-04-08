@@ -1,0 +1,6 @@
+input = Input()
+input:bind('w', 'up')
+input:bind('s', 'down')
+input:bind('d', 'right')
+input:bind('a', 'left')
+input:bind('space', 'action')
