@@ -3,6 +3,7 @@ require('dependencies')
 
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
+    map = sti('assets/maps/level1.lua')
     -- Creating the Hero Object
     --hero = Hero:Create()
     ship = Ship:Create()
@@ -24,6 +25,7 @@ end
 function love.update(dt)
     --updating hero object
     --hero:update(dt)
+    map:update(dt)
     ship:update(dt)
     updateBullets(dt)
 end--update
@@ -31,6 +33,7 @@ end--update
 function love.draw()
     -- Drawing to the gameCanvas
     love.graphics.setCanvas(gameCanvas)
+        map:draw()
         love.graphics.draw(bg, 0, 0)
         ship:draw()
         for i, b in ipairs(bullets) do

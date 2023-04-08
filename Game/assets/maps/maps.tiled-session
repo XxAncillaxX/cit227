@@ -8,8 +8,10 @@
     ],
     "fileStates": {
     },
+    "last.exportedFilePath": "C:/Users/mhart/OneDrive/Documents/Cit227/Game/assets/maps",
     "last.imagePath": "C:/Users/mhart/OneDrive/Documents/Cit227/Game/assets/graphics/spritesheets",
     "map.height": 400,
+    "map.lastUsedExportFilter": "Lua files (*.lua)",
     "map.lastUsedFormat": "tmx",
     "map.width": 17,
     "openFiles": [
