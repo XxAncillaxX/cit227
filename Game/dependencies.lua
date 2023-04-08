@@ -1,4 +1,6 @@
 Input = require('library/Input')
 anim8 = require('library/anim8')
 require('ship')
+require('bullet')
+require('weapon')
 require('input_bindings')

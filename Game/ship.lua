@@ -22,7 +22,8 @@ function Ship:Create()
         Image = love.graphics.newImage("assets/graphics/spritesheets/ship.png"),
         animations = nil,
         animation = nil,
-        time = 0
+        time = 0,
+        weapon = Weapon:Create(0.05)
     }
 
     -- Setting up grid and anim8
@@ -50,6 +51,7 @@ end
 function Ship:update(dt)
     self.time = self.time + dt
     self:handleInput(dt)
+    self.weapon:update(dt)
     self.animation:update(dt)
     self.x = self.x + (self.xSpeed * dt)
     self.y = self.y + (self.ySpeed * dt)
