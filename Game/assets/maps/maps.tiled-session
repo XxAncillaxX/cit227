@@ -3,10 +3,23 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "collectibles.tsx",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
+        "collectibles.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 4
+        },
+        "level1.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 207.25,
+                "y": 6267.5
+            }
+        }
     },
     "last.exportedFilePath": "C:/Users/mhart/OneDrive/Documents/Cit227/Game/assets/maps",
     "last.imagePath": "C:/Users/mhart/OneDrive/Documents/Cit227/Game/assets/graphics/spritesheets",
@@ -15,10 +28,14 @@
     "map.lastUsedFormat": "tmx",
     "map.width": 17,
     "openFiles": [
+        "level1.tmx",
+        "collectibles.tsx"
     ],
     "project": "maps.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "level1.tmx",
+        "collectibles.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
