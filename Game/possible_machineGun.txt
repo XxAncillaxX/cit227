@@ -10,3 +10,7 @@ function Weapon:fire()
     table.insert(bullets, b2)
     self.timer = self.cooldown
 end
+
+function Test:fire()
+
+end
