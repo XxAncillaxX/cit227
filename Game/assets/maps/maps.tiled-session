@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "collectibles.tsx",
+    "activeFile": "level1.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -14,10 +14,10 @@
         },
         "level1.tmx": {
             "scale": 2,
-            "selectedLayer": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 207.25,
-                "y": 6267.5
+                "x": 206.75,
+                "y": 6266.5
             }
         }
     },
@@ -34,8 +34,8 @@
     "project": "maps.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "level1.tmx",
-        "collectibles.tsx"
+        "collectibles.tsx",
+        "level1.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
