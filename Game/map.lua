@@ -21,8 +21,11 @@ function Map:Create(filename, ship, gameHeight)
         scrollSpeed = 30,
         background = love.graphics.newImage("assets/graphics/backgrounds/parallax-space-background2.png")
     }
-    print(map.ty)
+    --print(map.ty)
     setmetatable(this, self)
+
+    log.trace(inspect(this.tilemap.objects))
+
     return(this)
 
 end
