@@ -16,7 +16,7 @@ function love.load()
 
     bullets = {}
 end--load
---[[
+--[[ @XxAncillaxX
 function updateBullets(dt)
     -- loop through the indexed pairs of a lua table
     -- very similar to loopin through a list/array by index number
