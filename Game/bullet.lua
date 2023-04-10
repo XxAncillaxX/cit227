@@ -1,4 +1,4 @@
-Bullet = {}
+Bullet = {type = "bullet"}
 Bullet.__index = Bullet
 
 function Bullet:Create(x, y, xSpeed, ySpeed)

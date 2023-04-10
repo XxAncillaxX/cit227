@@ -1,7 +1,7 @@
 --Creating OOP class
 --Creating meta table
 --Defining table
-Ship = {}
+Ship = {type = "ship"}
 Ship.__index = Ship
 
 --creating a new instance of the table
