@@ -1,5 +1,6 @@
 Input = require('library/Input')
 anim8 = require('library/anim8')
+bump = require('library/bump')
 sti = require('library/sti')
 
 inspect = require('library/inspect')

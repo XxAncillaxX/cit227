@@ -12,6 +12,7 @@ function Map:Create(filename, ship, gameHeight)
         tileWidth = map.tilewidth,
         tileHeight = map.tileheight,
         ty = gameHeight - (map.height * map.tileheight),
+        world = bump.newWorld(),
         ship = ship,
         enemies = {},
         bullets = {},
@@ -54,9 +55,14 @@ function Map:Create(filename, ship, gameHeight)
         --log.trace(inspect(object.type))
         if (object.type == "collectible") then
             -- insert collectible
+            -- local is only specific to this code block!
+            local c = Collectible:Create(object.x, object.y)
+            this.world:add(c, c.x, c.y, c.w, c.h)
+            table.insert(this.collectibles, c)
         elseif (object.type) == "spawnPoint" then
             this.ship.x = object.x
             this.ship.y = object.y
+            this.world:add(this.ship, object.x, object.y)
         end
     end
     return(this)
