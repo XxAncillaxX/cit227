@@ -13,8 +13,8 @@ function Ship:Create()
     local this = {
         x = 0,
         y = 80,
-        w = 0,
-        h = 0,
+        w = 16,
+        h = 16,
         xSpeed = 0,
         ySpeed = 0,
         topSpeed = 100,

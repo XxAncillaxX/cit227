@@ -11,7 +11,7 @@ function Collectible:Create(x, y)
         animation = nil
     }
 
-    local grid = anim8.newGrid(0, 0, 16, 16, this.Image:getDimensions())
+    local grid = anim8.newGrid(16, 16, this.image:getDimensions())
     this.animation = anim8.newAnimation(grid('1-2', 1), 0.5)
 
     setmetatable(this, self)

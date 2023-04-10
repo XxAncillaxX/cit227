@@ -33,6 +33,9 @@ function Map:Create(filename, ship, gameHeight)
         this.ship:update(dt)
         -- objects/hazards
         -- collectibles
+        for i, c in ipairs(this.collectibles) do
+            c:update(dt)
+        end
         -- update bullets
         updateBullets(dt)
         -- update enemies
@@ -40,6 +43,9 @@ function Map:Create(filename, ship, gameHeight)
 
     function sprite_layer:draw()
         -- draw collectibles
+        for i, c in ipairs(this.collectibles) do
+            c:draw()
+        end
         -- draw enemies
         -- draw bullets
         for i, b in ipairs(bullets) do
@@ -56,13 +62,13 @@ function Map:Create(filename, ship, gameHeight)
         if (object.type == "collectible") then
             -- insert collectible
             -- local is only specific to this code block!
-            local c = Collectible:Create(object.x, object.y)
+            local c = Collectible:Create(object.x, object.y-16)
             this.world:add(c, c.x, c.y, c.w, c.h)
             table.insert(this.collectibles, c)
         elseif (object.type) == "spawnPoint" then
             this.ship.x = object.x
             this.ship.y = object.y
-            this.world:add(this.ship, object.x, object.y)
+            this.world:add(this.ship, object.x, object.y, this.ship.w, this.ship.w)
         end
     end
     return(this)
