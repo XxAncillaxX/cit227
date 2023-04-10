@@ -23,7 +23,8 @@ function Ship:Create()
         animations = nil,
         animation = nil,
         time = 0,
-        weapon = Weapon:Create(0.01)
+        weapon = Weapon:Create(0.01),
+        map = nil
     }
 
     -- Setting up grid and anim8
@@ -48,6 +49,17 @@ function Ship:Create()
     return(this)
 end
 
+function Ship:setMap(m)
+    self.map = m
+end
+
+function shipFilter(ship, other)
+    if (other.type == "collectible") then
+        return("cross")
+    else
+        return("slide")
+    end
+end
 function Ship:update(dt)
     self.time = self.time + dt
     self:handleInput(dt)
@@ -55,6 +67,18 @@ function Ship:update(dt)
     self.animation:update(dt)
     self.x = self.x + (self.xSpeed * dt)
     self.y = self.y + (self.ySpeed * dt)
+    local goalX = self.x + (self.xSpeed * dt)
+    local goalY = self.y + (self.ySpeed * dt)
+    -- Refrence to self.map.world to keep following code less wordy
+    local world = self.map.world
+    local actualX, actualY, cols, len = world:move(self, goalX, goalY, shipFilter)
+    self.x = actualX
+    self.y = actualY
+    if len > 0 then
+        -- if we collided with a colletible
+        -- remove it
+        log.trace("COLLISIONS")
+    end
 end
 
 function Ship:handleInput(dt)

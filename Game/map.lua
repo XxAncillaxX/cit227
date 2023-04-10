@@ -69,6 +69,7 @@ function Map:Create(filename, ship, gameHeight)
             this.ship.x = object.x
             this.ship.y = object.y
             this.world:add(this.ship, object.x, object.y, this.ship.w, this.ship.w)
+            this.ship:setMap(this)
         end
     end
     return(this)
