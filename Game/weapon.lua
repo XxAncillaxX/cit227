@@ -3,7 +3,7 @@ Weapon.__index = Weapon
 
 function Weapon:Create()
     local this ={
-        cooldown = 0.10,
+        cooldown = 0.15,
         timer = 0
 
     }

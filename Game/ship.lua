@@ -23,7 +23,7 @@ function Ship:Create()
         animations = nil,
         animation = nil,
         time = 0,
-        weapon = Weapon:Create(0.01),
+        weapon = Weapon:Create(0.1),
         map = nil
     }
 
