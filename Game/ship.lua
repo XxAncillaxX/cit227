@@ -60,6 +60,8 @@ function shipFilter(ship, other)
         return("slide")
     end
 end
+
+
 function Ship:update(dt)
     self.time = self.time + dt
     self:handleInput(dt)
@@ -81,15 +83,29 @@ function Ship:update(dt)
     end
 end
 
+function Ship:clamp(val)
+    local min = 1.00
+    local max = 250.00
+    if (val >= max) then
+        return max
+    elseif (val <= min) then
+        return min
+    else
+        return (val)
+    end
+end
+
 function Ship:handleInput(dt)
     if input:down('right') then
         --self:move('right')
         self.xSpeed = self.topSpeed
         self.animation = self.animations.farRight
+        self.x = self:clamp(self.x)
     elseif input:down('left') then
         --self:move('left')
         self.xSpeed = -self.topSpeed
         self.animation = self.animations.farLeft
+        self.x = self:clamp(self.x)
     else
         self.xSpeed = 0
         self.animation = self.animations.still
@@ -106,7 +122,7 @@ function Ship:handleInput(dt)
     end
 end
 
-
 function Ship:draw()
     self.animation:draw(self.image, self.x, self.y)
+    love.graphics.print(self.x, 0, 6300)
 end

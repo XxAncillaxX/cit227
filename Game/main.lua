@@ -10,7 +10,7 @@ function love.load()
     -- Creating the Hero Object
     --hero = Hero:Create()
     ship = Ship:Create()
-    map = Map:Create("level1.lua", ship, gameHeight)
+    map = Map:Create("level1.lua", ship, gameHeight,gameWidth)
     bg = love.graphics.newImage("assets/graphics/backgrounds/parallax-space-background2.png")
 
 
