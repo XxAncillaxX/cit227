@@ -124,5 +124,4 @@ end
 
 function Ship:draw()
     self.animation:draw(self.image, self.x, self.y)
-    love.graphics.print(self.x, 0, 6300)
 end

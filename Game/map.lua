@@ -77,7 +77,7 @@ function Map:Create(filename, ship, gameHeight)
 end
 
 function Map:update(dt)
-    --self.ty = self.ty + self.scrollSpeed * dt
+    self.ty = self.ty + self.scrollSpeed * dt
     self.tilemap:update(dt)
 end
 
