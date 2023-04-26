@@ -66,9 +66,12 @@ function Map:Create(filename, ship, gameHeight)
             this.world:add(c, c.x, c.y, c.w, c.h)
             table.insert(this.collectibles, c)
         elseif (object.type) == "spawnPoint" then
+            -- Setting Ship Spawn point by using using the object.x and y values and saving them to the ships x and y
             this.ship.x = object.x
             this.ship.y = object.y
-            this.world:add(this.ship, object.x, object.y, this.ship.w, this.ship.w)
+            -- adding the ship to the map and passing the information needed to set it in place
+            this.world:add(this.ship, object.x, object.y, this.ship.w, this.ship.h)
+            -- setting the ship to the map
             this.ship:setMap(this)
         end
     end
