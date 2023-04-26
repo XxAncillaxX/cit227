@@ -3,11 +3,33 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level1.tmx",
+    "activeFile": "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/level1.tmx",
     "expandedProjectPaths": [
         "."
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/collectible.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/level1.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 167.5,
+                "y": 6221.5
+            }
+        },
+        "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/level1.tmx#collectible": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/obstacle.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 5.5,
+            "scaleInEditor": 8
+        },
         "collectibles.tsx": {
             "scaleInDock": 2,
             "scaleInEditor": 4
@@ -16,30 +38,35 @@
             "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 206.25,
-                "y": 6330.5
+                "x": 116.5,
+                "y": -93.75
             }
         }
     },
     "last.exportedFilePath": "C:/Users/mhart/OneDrive/Documents/Cit227/Game/assets/maps",
-    "last.imagePath": "C:/Users/mhart/OneDrive/Documents/Cit227/Game/assets/graphics/spritesheets",
+    "last.externalTilesetPath": "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps",
+    "last.imagePath": "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/graphics/others/asteroid-fighter/PNG/asteroids",
     "map.height": 400,
     "map.lastUsedExportFilter": "Lua files (*.lua)",
     "map.lastUsedFormat": "tmx",
     "map.width": 17,
     "openFiles": [
+        "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/level1.tmx"
+    ],
+    "project": "maps.tiled-project",
+    "property.type": "int",
+    "recentFiles": [
+        "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/level1.tmx",
+        "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/obstacle.tsx",
+        "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/collectible.tsx",
         "level1.tmx",
         "collectibles.tsx"
     ],
-    "project": "maps.tiled-project",
-    "property.type": "string",
-    "recentFiles": [
-        "collectibles.tsx",
-        "level1.tmx"
-    ],
+    "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
-        "height": 16,
-        "width": 16
-    }
+        "height": 6,
+        "width": 6
+    },
+    "tileset.type": 1
 }

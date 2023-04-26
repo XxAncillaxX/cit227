@@ -14,9 +14,24 @@
             "id": 1,
             "members": [
                 {
+                    "name": "charge amount",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "duration",
+                    "type": "int",
+                    "value": 0
+                },
+                {
                     "name": "id",
                     "type": "string",
-                    "value": "machineGun"
+                    "value": ""
+                },
+                {
+                    "name": "points",
+                    "type": "int",
+                    "value": 0
                 }
             ],
             "name": "collectible",
@@ -33,6 +48,25 @@
             "members": [
             ],
             "name": "spawnPoint",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 3,
+            "members": [
+            ],
+            "name": "obstacle",
             "type": "class",
             "useAs": [
                 "property",
