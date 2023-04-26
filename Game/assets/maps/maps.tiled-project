@@ -44,10 +44,20 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
-            "id": 2,
+            "id": 3,
             "members": [
+                {
+                    "name": "destructable",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "id",
+                    "type": "string",
+                    "value": ""
+                }
             ],
-            "name": "spawnPoint",
+            "name": "obstacle",
             "type": "class",
             "useAs": [
                 "property",
@@ -63,10 +73,10 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
-            "id": 3,
+            "id": 2,
             "members": [
             ],
-            "name": "obstacle",
+            "name": "spawnPoint",
             "type": "class",
             "useAs": [
                 "property",

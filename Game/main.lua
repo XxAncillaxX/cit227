@@ -9,11 +9,14 @@ function love.load()
     gameCanvas = love.graphics.newCanvas(270, 320)
     -- Creating the Hero Object
     --hero = Hero:Create()
+    -- Creating the Ship Object
     ship = Ship:Create()
+    -- Creating the map Object and passing it the level, refrence to the ship, gameHeight, and gameWidth
     map = Map:Create("level1.lua", ship, gameHeight,gameWidth)
+    -- Storing background image in to a variable
     bg = love.graphics.newImage("assets/graphics/backgrounds/parallax-space-background2.png")
 
-
+    -- table to store bullets as they are created
     bullets = {}
 end--load
 --[[ @XxAncillaxX

@@ -503,8 +503,10 @@ return {
           gid = 1,
           visible = true,
           properties = {
+            ["charge amount"] = 0,
             ["collectible"] = "machineGun",
-            ["id"] = "machineGun",
+            ["duration"] = 0,
+            ["id"] = "",
             ["points"] = 500
           }
         },
