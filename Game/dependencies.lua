@@ -6,6 +6,8 @@ sti = require('library/sti')
 inspect = require('library/inspect')
 log = require('library/log')
 
+require('sounds')
+
 require('input_bindings')
 require('collectible')
 require('bullet')

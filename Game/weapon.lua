@@ -52,6 +52,7 @@ function Weapon:update(dt)
     if input:down('fire') then
         if self.timer <= 0 then
             self:fire()
+            Sounds.laser:play()
             -- reset the cooldown timer
         end
     end

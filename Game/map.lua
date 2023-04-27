@@ -97,3 +97,7 @@ function updateBullets(dt)
         b:update(dt)
     end
 end
+
+function Map:removeaCollectible(c)
+    
+end

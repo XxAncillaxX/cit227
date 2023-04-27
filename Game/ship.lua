@@ -69,6 +69,7 @@ function Ship:update(dt)
     self.animation:update(dt)
     self.x = self.x + (self.xSpeed * dt)
     self.y = self.y + (self.ySpeed * dt)
+    -- Update ship's coordinates with collison detection
     local goalX = self.x + (self.xSpeed * dt)
     local goalY = self.y + (self.ySpeed * dt)
     -- Refrence to self.map.world to keep following code less wordy
@@ -76,9 +77,22 @@ function Ship:update(dt)
     local actualX, actualY, cols, len = world:move(self, goalX, goalY, shipFilter)
     self.x = actualX
     self.y = actualY
-    if len > 0 then
-        -- if we collided with a colletible
-        -- remove it
+    if len > 0 then -- if there were any
+        -- for each collision in the collision table
+        for i, c in ipairs(cols) do
+            -- if we collided with a colletible
+            if c.other.type == "collectible" then 
+                -- add point total
+                -- do the thing the collectible does
+                -- play a sound
+                Sounds.collectible:play()
+                -- remove it (collision world, AND the map)
+                world:remove(c.other)
+                self.map:removeaCollectible(c.other)
+            elseif c.other.type =="bullet" then
+
+            end
+        end
         log.trace("COLLISIONS")
     end
 end
