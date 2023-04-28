@@ -65,6 +65,7 @@ function Map:Create(filename, ship, gameHeight)
             -- insert collectible
             -- local is only specific to this code block!
             local c = Collectible:Create(object.x, object.y-16)
+            c.points = object.properties.points
             this.world:add(c, c.x, c.y, c.w, c.h)
             table.insert(this.collectibles, c)
         elseif (object.type) == "spawnPoint" then
@@ -82,7 +83,7 @@ function Map:Create(filename, ship, gameHeight)
 end
 
 function Map:update(dt)
-    --self.ty = self.ty + self.scrollSpeed * dt
+    self.ty = self.ty + self.scrollSpeed * dt
     self.tilemap:update(dt)
 end
 

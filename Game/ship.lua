@@ -17,7 +17,7 @@ function Ship:Create()
         h = 16,
         xSpeed = 0,
         ySpeed = 0,
-        topSpeed = 100,
+        topSpeed = 150,
         facing = "right",
         image = love.graphics.newImage("assets/graphics/spritesheets/ship.png"),
         animations = nil,
@@ -67,8 +67,8 @@ function Ship:update(dt)
     self:handleInput(dt)
     self.weapon:update(dt)
     self.animation:update(dt)
-    self.x = self.x + (self.xSpeed * dt)
-    self.y = self.y + (self.ySpeed * dt)
+    --self.x = self.x + (self.xSpeed * dt)
+    --self.y = self.y + (self.ySpeed * dt)
     -- Update ship's coordinates with collison detection
     local goalX = self.x + (self.xSpeed * dt)
     local goalY = self.y + (self.ySpeed * dt)
@@ -89,6 +89,7 @@ function Ship:update(dt)
                 -- remove it (collision world, AND the map)
                 world:remove(c.other)
                 self.map:removeaCollectible(c.other)
+                game:addPoints(c.other.points)
             elseif c.other.type =="bullet" then
 
             end
@@ -132,7 +133,7 @@ function Ship:handleInput(dt)
         --self:move('down')
         self.ySpeed = self.topSpeed
     else
-        self.ySpeed = 0
+        self.ySpeed = -self.map.scrollSpeed
     end
 end
 

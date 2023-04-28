@@ -13,5 +13,7 @@ require('collectible')
 require('bullet')
 require('weapon')
 require('ship')
+require('hud')
+require('game')
 require('map')
 
