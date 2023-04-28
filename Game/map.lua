@@ -57,6 +57,8 @@ function Map:Create(filename, ship, gameHeight)
 
     -- ipairs => indexed pairs in a non key/value table (traditional array)
     -- pair => for key/value pairs
+    -- to hide the objects layer on the map unless there being looped through in the following code
+    this.tilemap.layers['objects'].visible = false
     for k, object in pairs(this.tilemap.layers[2].objects) do
         --log.trace(inspect(object.type))
         if (object.type == "collectible") then
@@ -98,6 +100,11 @@ function updateBullets(dt)
     end
 end
 
-function Map:removeaCollectible(c)
-    
+function Map:removeaCollectible(collectible)
+    for i=#self.collectibles,1,-1 do
+        local c = self.collectibles[i]
+        if collectible == c then
+            table.remove(self.collectibles, i)
+        end
+    end
 end
