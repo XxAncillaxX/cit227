@@ -3,12 +3,17 @@ bulletTypes = {
     laser = {
         frames = {'5-5', 1},
         damage = 3,
-        piercing = true
+        piercing = false
     },
     spread = {
         frames = {'3-4', 1},
         damage = 1,
         piercing = false
+    },
+    plasma = {
+        frames = {},
+        damage = 5,
+        piercing = true
     },
 }
 

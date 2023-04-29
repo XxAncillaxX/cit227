@@ -23,7 +23,8 @@ function Ship:Create(map)
         animations = nil,
         animation = nil,
         time = 0,
-        weapon = Weapon:Create('spread', map),
+        weapon = Weapon:Create('laser', map),
+        --weapon = Weapon:Create('spread', map),
         map = map
     }
 
@@ -80,6 +81,9 @@ function Ship:update(dt)
             if c.other.type == "collectible" then 
                 -- add point total
                 -- do the thing the collectible does
+                if c.other.collectibleType == "weapon" then
+                    ship.weapon = Weapon:Create(c.other.params, self.map)
+                end
                 -- play a sound
                 Sounds.collectible:play()
                 -- remove it (collision world, AND the map)

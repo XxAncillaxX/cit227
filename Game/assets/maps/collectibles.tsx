@@ -4,7 +4,7 @@
  <tile id="0" type="collectible">
   <properties>
    <property name="frames" value="1-2"/>
-   <property name="params" value="machine gun"/>
+   <property name="params" value="spread"/>
    <property name="points" type="int" value="500"/>
    <property name="row" type="int" value="1"/>
    <property name="type" value="weapon"/>
@@ -14,7 +14,7 @@
   <properties>
    <property name="charge amount" type="int" value="1"/>
    <property name="frames" value="1-2"/>
-   <property name="params" value="super weapon"/>
+   <property name="params" value="super"/>
    <property name="row" type="int" value="3"/>
    <property name="type" value="weapon"/>
   </properties>
@@ -31,7 +31,7 @@
  <tile id="14" type="collectible">
   <properties>
    <property name="frames" value="3-4"/>
-   <property name="params" value="PlasmaGun"/>
+   <property name="params" value="plasma"/>
    <property name="points" type="int" value="500"/>
    <property name="row" type="int" value="4"/>
    <property name="type" value="weapon"/>

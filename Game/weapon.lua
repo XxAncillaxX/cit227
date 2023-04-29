@@ -1,12 +1,20 @@
 weaponTypes = {
     laser = {
         bulletType = "laser",
-        cooldown = 0.1
+        cooldown = 0.3
     },
     spread = {
         bulletType = "spread",
-        cooldown = 0.2
+        cooldown = 0.5
     },
+    super = {
+        bulletType = "beam",
+        charge = 0
+    },
+    plasma = {
+        bulletType = "plasma",
+        cooldown = 0.8
+    }
 }
 
 Weapon = {}
@@ -48,9 +56,9 @@ function Weapon:firePlasma()
 end
 
 function Weapon:fireSpread()
-    local b1 = Bullet:Create('spread', ship.x, ship.y, 0, -220)
-    local b2 = Bullet:Create('spread', ship.x, ship.y, -30, -200)
-    local b3 = Bullet:Create('spread', ship.x, ship.y, 30, -200)
+    local b1 = Bullet:Create('spread', ship.x, ship.y, 0, -200)
+    local b2 = Bullet:Create('spread', ship.x, ship.y, -35, -200)
+    local b3 = Bullet:Create('spread', ship.x, ship.y, 35, -200)
     table.insert(self.map.bullets, b1)
     table.insert(self.map.bullets, b2)
     table.insert(self.map.bullets, b3)
@@ -59,7 +67,6 @@ function Weapon:fireSpread()
 end
 
 function Weapon:fireLaser()
-        self.cooldown = 0.15
         local b = Bullet:Create('laser', ship.x, ship.y, 0, -200)
         -- add it to the bullet table directly
         table.insert(self.map.bullets, b)

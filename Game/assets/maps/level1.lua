@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 4,
-  nextobjectid = 12,
+  nextobjectid = 18,
   properties = {
     ["background"] = "background 2",
     ["music"] = "frenetic",
@@ -52,7 +52,7 @@ return {
             ["charge amount"] = 0,
             ["duration"] = 0,
             ["frames"] = "1-2",
-            ["params"] = "machine gun",
+            ["params"] = "spread",
             ["points"] = 500,
             ["row"] = 1,
             ["type"] = "weapon"
@@ -65,7 +65,7 @@ return {
             ["charge amount"] = 1,
             ["duration"] = 0,
             ["frames"] = "1-2",
-            ["params"] = "super weapon",
+            ["params"] = "super",
             ["points"] = 0,
             ["row"] = 3,
             ["type"] = "weapon"
@@ -91,7 +91,7 @@ return {
             ["charge amount"] = 0,
             ["duration"] = 0,
             ["frames"] = "3-4",
-            ["params"] = "PlasmaGun",
+            ["params"] = "plasma",
             ["points"] = 500,
             ["row"] = 4,
             ["type"] = "weapon"
@@ -536,28 +536,6 @@ return {
       properties = {},
       objects = {
         {
-          id = 4,
-          name = "",
-          type = "collectible",
-          shape = "rectangle",
-          x = 128,
-          y = 6272.5,
-          width = 16,
-          height = 16,
-          rotation = 0,
-          gid = 1,
-          visible = true,
-          properties = {
-            ["charge amount"] = 0,
-            ["duration"] = 0,
-            ["frames"] = "1-2",
-            ["params"] = "spread",
-            ["points"] = 500,
-            ["row"] = 1,
-            ["type"] = "weapon"
-          }
-        },
-        {
           id = 5,
           name = "",
           type = "spawnPoint",
@@ -586,19 +564,19 @@ return {
             ["charge amount"] = 0,
             ["duration"] = 0,
             ["frames"] = "1-2",
-            ["params"] = "machine gun",
+            ["params"] = "spread",
             ["points"] = 500,
             ["row"] = 1,
             ["type"] = "weapon"
           }
         },
         {
-          id = 8,
+          id = 14,
           name = "",
           type = "collectible",
           shape = "rectangle",
-          x = 48.5,
-          y = 6177,
+          x = 32,
+          y = 6272,
           width = 16,
           height = 16,
           rotation = 0,
@@ -615,12 +593,34 @@ return {
           }
         },
         {
-          id = 10,
+          id = 15,
+          name = "",
+          type = "collectible",
+          shape = "rectangle",
+          x = 128,
+          y = 6272,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          gid = 1,
+          visible = true,
+          properties = {
+            ["charge amount"] = 0,
+            ["duration"] = 0,
+            ["frames"] = "1-2",
+            ["params"] = "spread",
+            ["points"] = 500,
+            ["row"] = 1,
+            ["type"] = "weapon"
+          }
+        },
+        {
+          id = 16,
           name = "",
           type = "collectible",
           shape = "rectangle",
           x = 80,
-          y = 6240,
+          y = 6272,
           width = 16,
           height = 16,
           rotation = 0,
@@ -630,19 +630,19 @@ return {
             ["charge amount"] = 0,
             ["duration"] = 0,
             ["frames"] = "3-4",
-            ["params"] = "PlasmaGun",
+            ["params"] = "plasma",
             ["points"] = 500,
             ["row"] = 4,
             ["type"] = "weapon"
           }
         },
         {
-          id = 11,
+          id = 17,
           name = "",
           type = "collectible",
           shape = "rectangle",
-          x = 160,
-          y = 6320,
+          x = 192,
+          y = 6272,
           width = 16,
           height = 16,
           rotation = 0,
@@ -652,7 +652,7 @@ return {
             ["charge amount"] = 1,
             ["duration"] = 0,
             ["frames"] = "1-2",
-            ["params"] = "super weapon",
+            ["params"] = "super",
             ["points"] = 0,
             ["row"] = 3,
             ["type"] = "weapon"
