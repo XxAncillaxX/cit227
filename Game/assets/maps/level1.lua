@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 4,
-  nextobjectid = 8,
+  nextobjectid = 12,
   properties = {
     ["background"] = "background 2",
     ["music"] = "frenetic",
@@ -28,7 +28,7 @@ return {
       columns = 4,
       image = "../graphics/spritesheets/power-up.png",
       imagewidth = 64,
-      imageheight = 32,
+      imageheight = 64,
       objectalignment = "unspecified",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -43,13 +43,58 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 8,
+      tilecount = 16,
       tiles = {
         {
           id = 0,
+          type = "collectible",
           properties = {
-            ["collectible"] = "machineGun",
-            ["points"] = 500
+            ["charge amount"] = 0,
+            ["duration"] = 0,
+            ["frames"] = "1-2",
+            ["params"] = "machine gun",
+            ["points"] = 500,
+            ["row"] = 1,
+            ["type"] = "weapon"
+          }
+        },
+        {
+          id = 8,
+          type = "collectible",
+          properties = {
+            ["charge amount"] = 1,
+            ["duration"] = 0,
+            ["frames"] = "1-2",
+            ["params"] = "super weapon",
+            ["points"] = 0,
+            ["row"] = 3,
+            ["type"] = "weapon"
+          }
+        },
+        {
+          id = 12,
+          type = "collectible",
+          properties = {
+            ["charge amount"] = 0,
+            ["duration"] = 5,
+            ["frames"] = "1-2",
+            ["params"] = "",
+            ["points"] = 200,
+            ["row"] = 4,
+            ["type"] = "shield"
+          }
+        },
+        {
+          id = 14,
+          type = "collectible",
+          properties = {
+            ["charge amount"] = 0,
+            ["duration"] = 0,
+            ["frames"] = "3-4",
+            ["params"] = "PlasmaGun",
+            ["points"] = 500,
+            ["row"] = 4,
+            ["type"] = "weapon"
           }
         }
       }
@@ -504,10 +549,12 @@ return {
           visible = true,
           properties = {
             ["charge amount"] = 0,
-            ["collectible"] = "machineGun",
             ["duration"] = 0,
-            ["id"] = "",
-            ["points"] = 500
+            ["frames"] = "1-2",
+            ["params"] = "spread",
+            ["points"] = 500,
+            ["row"] = 1,
+            ["type"] = "weapon"
           }
         },
         {
@@ -526,7 +573,7 @@ return {
         {
           id = 6,
           name = "",
-          type = "",
+          type = "collectible",
           shape = "rectangle",
           x = 48.5,
           y = 65,
@@ -536,23 +583,80 @@ return {
           gid = 1,
           visible = true,
           properties = {
-            ["collectible"] = "machineGun",
-            ["points"] = 500
+            ["charge amount"] = 0,
+            ["duration"] = 0,
+            ["frames"] = "1-2",
+            ["params"] = "machine gun",
+            ["points"] = 500,
+            ["row"] = 1,
+            ["type"] = "weapon"
           }
         },
         {
-          id = 7,
+          id = 8,
           name = "",
-          type = "",
+          type = "collectible",
           shape = "rectangle",
-          x = 160.5,
-          y = 6305,
+          x = 48.5,
+          y = 6177,
           width = 16,
           height = 16,
           rotation = 0,
-          gid = 7,
+          gid = 13,
           visible = true,
-          properties = {}
+          properties = {
+            ["charge amount"] = 0,
+            ["duration"] = 5,
+            ["frames"] = "1-2",
+            ["params"] = "",
+            ["points"] = 200,
+            ["row"] = 4,
+            ["type"] = "shield"
+          }
+        },
+        {
+          id = 10,
+          name = "",
+          type = "collectible",
+          shape = "rectangle",
+          x = 80,
+          y = 6240,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          gid = 15,
+          visible = true,
+          properties = {
+            ["charge amount"] = 0,
+            ["duration"] = 0,
+            ["frames"] = "3-4",
+            ["params"] = "PlasmaGun",
+            ["points"] = 500,
+            ["row"] = 4,
+            ["type"] = "weapon"
+          }
+        },
+        {
+          id = 11,
+          name = "",
+          type = "collectible",
+          shape = "rectangle",
+          x = 160,
+          y = 6320,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          gid = 9,
+          visible = true,
+          properties = {
+            ["charge amount"] = 1,
+            ["duration"] = 0,
+            ["frames"] = "1-2",
+            ["params"] = "super weapon",
+            ["points"] = 0,
+            ["row"] = 3,
+            ["type"] = "weapon"
+          }
         }
       }
     },

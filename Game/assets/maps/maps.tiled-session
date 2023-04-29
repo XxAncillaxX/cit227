@@ -41,8 +41,8 @@
             "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 137.75,
-                "y": 6231
+                "x": 137.25,
+                "y": 6256
             }
         }
     },
@@ -57,10 +57,10 @@
         "level1.tmx"
     ],
     "project": "maps.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
-        "collectibles.tsx",
         "level1.tmx",
+        "collectibles.tsx",
         "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/level1.tmx",
         "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/obstacle.tsx",
         "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/collectible.tsx"

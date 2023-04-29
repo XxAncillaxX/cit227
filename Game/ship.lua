@@ -6,13 +6,13 @@ Ship.__index = Ship
 
 --creating a new instance of the table
 -- : allows Ship to refer to it's self
-function Ship:Create()
+function Ship:Create(map)
     --Create a new local table
     -- Set up insatnce variable
     --this tells the code where to look up the code with in the Ship {}
     local this = {
-        x = 0,
-        y = 80,
+        x = map.spawnPoint.x,
+        y = map.spawnPoint.y,
         w = 16,
         h = 16,
         xSpeed = 0,
@@ -23,8 +23,8 @@ function Ship:Create()
         animations = nil,
         animation = nil,
         time = 0,
-        weapon = Weapon:Create(0.1),
-        map = nil
+        weapon = Weapon:Create('spread', map),
+        map = map
     }
 
     -- Setting up grid and anim8
@@ -43,14 +43,10 @@ function Ship:Create()
         }
         -- setting default animation for Ship
         this.animation = this.animations.still
-
+        this.map:addShip(this)
     -- Make this an object and return it
     setmetatable(this, self)
     return(this)
-end
-
-function Ship:setMap(m)
-    self.map = m
 end
 
 function shipFilter(ship, other)
@@ -133,7 +129,10 @@ function Ship:handleInput(dt)
         --self:move('down')
         self.ySpeed = self.topSpeed
     else
-        self.ySpeed = -self.map.scrollSpeed
+        --enable to have ship stay still on map when scrolling is on
+        --self.ySpeed = -self.map.scrollSpeed
+        --enable to have ship stay still on map when scholling is off
+        self.ySpeed = 0
     end
 end
 

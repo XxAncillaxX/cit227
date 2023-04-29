@@ -2,7 +2,7 @@
 Map = {}
 Map.__index = Map
 
-function Map:Create(filename, ship, gameHeight)
+function Map:Create(filename, gameHeight)
     local map = sti('assets/maps/' .. filename)
     
     local this = {
@@ -14,6 +14,7 @@ function Map:Create(filename, ship, gameHeight)
         ty = gameHeight - (map.height * map.tileheight),
         world = bump.newWorld(),
         ship = ship,
+        spawnPoint = {},
         enemies = {},
         bullets = {},
         enemyBullets = {},
@@ -37,7 +38,9 @@ function Map:Create(filename, ship, gameHeight)
             c:update(dt)
         end
         -- update bullets
-        updateBullets(dt)
+        for i, b in ipairs(this.bullets) do
+            b:update(dt)
+        end
         -- update enemies
     end
 
@@ -48,7 +51,7 @@ function Map:Create(filename, ship, gameHeight)
         end
         -- draw enemies
         -- draw bullets
-        for i, b in ipairs(bullets) do
+        for i, b in ipairs(this.bullets) do
             b:draw()
         end
         -- draw ship
@@ -64,26 +67,30 @@ function Map:Create(filename, ship, gameHeight)
         if (object.type == "collectible") then
             -- insert collectible
             -- local is only specific to this code block!
-            local c = Collectible:Create(object.x, object.y-16)
+            local c = Collectible:Create(object)
             c.points = object.properties.points
             this.world:add(c, c.x, c.y, c.w, c.h)
             table.insert(this.collectibles, c)
         elseif (object.type) == "spawnPoint" then
             -- Setting Ship Spawn point by using using the object.x and y values and saving them to the ships x and y
-            this.ship.x = object.x
-            this.ship.y = object.y
+            this.spawnPoint.x = object.x
+            this.spawnPoint.y = object.y
             -- adding the ship to the map and passing the information needed to set it in place
-            this.world:add(this.ship, object.x, object.y, this.ship.w, this.ship.h)
-            -- setting the ship to the map
-            this.ship:setMap(this)
+            --this.world:add(this.ship, object.x, object.y, this.ship.w, this.ship.h)
+            
         end
     end
     return(this)
 
 end
 
+function Map:addShip(ship)
+    self.ship = ship
+    self.world:add(self.ship, ship.x, ship.y, self.ship.w, self.ship.h)
+end
+
 function Map:update(dt)
-    self.ty = self.ty + self.scrollSpeed * dt
+    --self.ty = self.ty + self.scrollSpeed * dt
     self.tilemap:update(dt)
 end
 
@@ -91,7 +98,7 @@ function Map:draw()
     love.graphics.draw(self.background)
     self.tilemap:draw(0, self.ty)
 end
-
+--[[
 function updateBullets(dt)
     -- loop through the indexed pairs of a lua table
     -- very similar to loopin through a list/array by index number
@@ -100,7 +107,7 @@ function updateBullets(dt)
         b:update(dt)
     end
 end
-
+]]
 function Map:removeaCollectible(collectible)
     for i=#self.collectibles,1,-1 do
         local c = self.collectibles[i]

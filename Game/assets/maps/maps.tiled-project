@@ -24,7 +24,12 @@
                     "value": 0
                 },
                 {
-                    "name": "id",
+                    "name": "frames",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "params",
                     "type": "string",
                     "value": ""
                 },
@@ -32,13 +37,24 @@
                     "name": "points",
                     "type": "int",
                     "value": 0
+                },
+                {
+                    "name": "row",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "type",
+                    "type": "string",
+                    "value": ""
                 }
             ],
             "name": "collectible",
             "type": "class",
             "useAs": [
                 "property",
-                "object"
+                "object",
+                "tile"
             ]
         },
         {

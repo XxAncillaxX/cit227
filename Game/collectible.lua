@@ -1,18 +1,21 @@
 Collectible = {type = "collectible"}
 Collectible.__index = Collectible
 
-function Collectible:Create(x, y)
+function Collectible:Create(def)
     local this = {
-        x = x,
-        y = y,
+        x = def.x,
+        y = def.y,
         w = 16,
         h = 16,
         image = love.graphics.newImage("assets/graphics/spritesheets/power-up.png"),
-        animation = nil
+        animation = nil,
+        points = def.properties.points,
+        collectibleType = def.properties.type,
+        params = def.properties.params
     }
 
     local grid = anim8.newGrid(16, 16, this.image:getDimensions())
-    this.animation = anim8.newAnimation(grid('1-2', 1), 0.5)
+    this.animation = anim8.newAnimation(grid(def.properties.frames, def.properties.row), 0.5)
 
     setmetatable(this, self)
     return(this)
