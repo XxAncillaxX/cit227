@@ -17,8 +17,6 @@ bulletTypes = {
     },
 }
 
-
-
 Bullet = {type = "bullet"}
 Bullet.__index = Bullet
 
