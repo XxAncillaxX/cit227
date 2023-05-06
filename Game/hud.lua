@@ -15,5 +15,11 @@ function HUD:update(dt)
 end
 
 function HUD:draw()
+    -- points
+    -- lives
+    -- health (if using)
+    -- level number
+    -- shield (duration, durability, etc)
+    -- indicator for active weapon
     love.graphics.printf(self.game.points, 10, 10, self.game.width - 20, 'center')
 end

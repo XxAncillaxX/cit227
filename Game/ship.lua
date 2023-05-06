@@ -92,7 +92,14 @@ function Ship:update(dt)
                 self.map:removeaCollectible(c.other)
                 game:addPoints(c.other.points)
             elseif c.other.type =="bullet" then
-
+                -- if shield is actie, take damage
+                -- otherwise ship takes damage
+            elseif c.other.type == "enemy" then
+                -- if shield is actie, take damage
+                -- otherwise ship takes damage
+            elseif c.other.type == "obstacle"
+                -- if shield is actie, take damage
+                -- otherwise ship takes damage
             end
         end
         log.trace("COLLISIONS")
