@@ -97,7 +97,7 @@ function Ship:update(dt)
             elseif c.other.type == "enemy" then
                 -- if shield is actie, take damage
                 -- otherwise ship takes damage
-            elseif c.other.type == "obstacle"
+            elseif c.other.type == "obstacle" then
                 -- if shield is actie, take damage
                 -- otherwise ship takes damage
             end

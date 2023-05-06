@@ -15,5 +15,6 @@ require('weapon')
 require('ship')
 require('hud')
 require('game')
+require('library/progress_bar')
 require('map')
 

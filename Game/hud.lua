@@ -4,7 +4,8 @@ HUD.__index = HUD
 function HUD:Create(game, ship)
     local this = {
         game = game,
-        ship = ship
+        ship = ship,
+        bar = ProgressBar:Create({x=10, y=10, 40})
     }
 
     setmetatable(this, self)

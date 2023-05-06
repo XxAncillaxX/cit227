@@ -1,5 +1,5 @@
 
-require('libs/tween')
+require('library/tween')
 
 ProgressBar = {}
 ProgressBar.__index = ProgressBar
