@@ -62,14 +62,15 @@ function Weapon:fireSpread()
     table.insert(self.map.bullets, b1)
     table.insert(self.map.bullets, b2)
     table.insert(self.map.bullets, b3)
-    self.timer = self.cooldown
     Sounds.laser:play()
+    self.timer = self.cooldown
 end
 
 function Weapon:fireLaser()
         local b = Bullet:Create('laser', ship.x, ship.y, 0, -200)
         -- add it to the bullet table directly
         table.insert(self.map.bullets, b)
+        Sounds.laser:play()
         self.timer = self.cooldown
 end
 
@@ -78,11 +79,18 @@ function Weapon:update(dt)
     if input:pressed('swap') then
         self:swapBullet()
     end
+    --[[
     if input:down('fire') then
         if self.timer <= 0 then
             self:fire()
-            Sounds.laser:play()
+            
             -- reset the cooldown timer
+        end
+    end
+    ]]
+    function Weapon:trigger()
+        if self.timer <= 0 then
+            self:fire()
         end
     end
 end

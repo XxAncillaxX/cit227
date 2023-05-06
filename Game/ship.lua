@@ -25,6 +25,7 @@ function Ship:Create(map)
         time = 0,
         weapon = Weapon:Create('laser', map),
         --weapon = Weapon:Create('spread', map),
+        shield = nil,
         map = map
     }
 
@@ -111,6 +112,7 @@ function Ship:clamp(val)
 end
 
 function Ship:handleInput(dt)
+    -- handling ships x movement
     if input:down('right') then
         --self:move('right')
         self.xSpeed = self.topSpeed
@@ -125,7 +127,7 @@ function Ship:handleInput(dt)
         self.xSpeed = 0
         self.animation = self.animations.still
     end--if
-
+    -- handling ships y movement
     if input:down('up') then
         --self:move('up')
         self.ySpeed = -self.topSpeed
@@ -138,6 +140,21 @@ function Ship:handleInput(dt)
         --enable to have ship stay still on map when scholling is off
         self.ySpeed = 0
     end
+
+    -- handling ships fire
+    if input:down('fire') then
+        self.weapon:trigger()
+    end
+
+    --handle shield input (if necessary)
+    -- not if it activate upon collection
+    -- check 'pressed' if it's an activate/deactivate toggle
+    -- check 'down' if it's enabled only when held down
+    -- check 'up' to deactivate
+    if input:pressed('shield') then
+        
+    end
+
 end
 
 function Ship:draw()
