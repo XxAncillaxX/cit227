@@ -1,10 +1,10 @@
-Input = require('library/Input')
-anim8 = require('library/anim8')
-bump = require('library/bump')
-sti = require('library/sti')
+Input = require('libs/Input')
+anim8 = require('libs/anim8')
+bump = require('libs/bump')
+sti = require('libs/sti')
 
-inspect = require('library/inspect')
-log = require('library/log')
+inspect = require('libs/inspect')
+log = require('libs/log')
 
 require('sounds')
 
@@ -15,6 +15,6 @@ require('weapon')
 require('ship')
 require('hud')
 require('game')
-require('library/progress_bar')
+require('libs/progress_bar')
 require('map')
 
