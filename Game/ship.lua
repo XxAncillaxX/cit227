@@ -54,6 +54,8 @@ end
 function shipFilter(ship, other)
     if (other.type == "collectible") then
         return("cross")
+    elseif (other.type == "obstacle") then
+        return("touch")
     else
         return("slide")
     end
@@ -101,6 +103,7 @@ function Ship:update(dt)
             elseif c.other.type == "obstacle" then
                 -- if shield is actie, take damage
                 -- otherwise ship takes damage
+                world:remove()
             end
         end
         log.trace("COLLISIONS")

@@ -1,4 +1,10 @@
 
+backgroundUpdate = {
+    background1 = "assets/graphics/backgrounds/parallax-space-background2.png",
+    background2 = "assets/graphics/backgrounds/space-background.png"
+}
+
+
 Map = {}
 Map.__index = Map
 
@@ -16,6 +22,7 @@ function Map:Create(filename, gameHeight)
         ship = ship,
         spawnPoint = {},
         enemies = {},
+        obstacles = {},
         bullets = {},
         enemyBullets = {},
         collectibles = {},
@@ -33,6 +40,9 @@ function Map:Create(filename, gameHeight)
         -- update ship
         this.ship:update(dt)
         -- objects/hazards
+        for i, o in ipairs(this.obstacles) do
+            o:update(dt)
+        end
         -- collectibles
         for i, c in ipairs(this.collectibles) do
             c:update(dt)
@@ -64,6 +74,12 @@ function Map:Create(filename, gameHeight)
         for i, e in ipairs(this.enemies) do
             e:draw()
         end
+
+        -- draw obstacles
+        for i, o in ipairs(this.obstacles) do
+            o:draw()
+        end
+
         -- draw bullets
         for i, b in ipairs(this.bullets) do
             b:draw()
@@ -94,6 +110,11 @@ function Map:Create(filename, gameHeight)
         elseif (object.type) == "enemy" then
             local e = Enemy:Create(object)
             table.insert(this.enemies, e)
+
+        elseif(object.type) == "obstacle" then
+            local o = Obstacle:Create(object)
+            this.world:add(o, o.x, o.y, o.w, o.h)
+            table.insert(this.obstacles, o)
         end
     end
     return(this)

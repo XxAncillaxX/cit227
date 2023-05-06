@@ -11,6 +11,55 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 3,
+            "members": [
+                {
+                    "name": "frameColumn",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "frameDuration",
+                    "type": "float",
+                    "value": 0.15
+                },
+                {
+                    "name": "frameRow",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "frames",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "id",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "image",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "name": "obstacle",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 1,
             "members": [
                 {
@@ -105,35 +154,6 @@
                 "property",
                 "object",
                 "tile"
-            ]
-        },
-        {
-            "color": "#ffa0a0a4",
-            "drawFill": true,
-            "id": 3,
-            "members": [
-                {
-                    "name": "destructable",
-                    "type": "bool",
-                    "value": false
-                },
-                {
-                    "name": "id",
-                    "type": "string",
-                    "value": ""
-                }
-            ],
-            "name": "obstacle",
-            "type": "class",
-            "useAs": [
-                "property",
-                "map",
-                "layer",
-                "object",
-                "tile",
-                "tileset",
-                "wangcolor",
-                "wangset"
             ]
         },
         {

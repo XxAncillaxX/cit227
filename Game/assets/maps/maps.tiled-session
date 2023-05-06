@@ -33,6 +33,18 @@
             "scaleInDock": 5.5,
             "scaleInEditor": 8
         },
+        "asteriodMedium.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "asteroidMedium.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "asteroidSmall.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 23
+        },
         "collectibles.tsx": {
             "scaleInDock": 2,
             "scaleInEditor": 4
@@ -69,9 +81,12 @@
         "level1.tmx"
     ],
     "project": "maps.tiled-project",
-    "property.type": "weapon",
+    "property.type": "float",
     "recentFiles": [
+        "asteroidSmall.tsx",
         "enemySmall.tsx",
+        "asteriodMedium.tsx",
+        "asteroidMedium.tsx",
         "enemyMedium.tsx",
         "enemyBig.tsx",
         "collectibles.tsx",
@@ -83,8 +98,8 @@
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
-        "height": 16,
-        "width": 32
+        "height": 31,
+        "width": 30
     },
     "tileset.type": 0
 }
