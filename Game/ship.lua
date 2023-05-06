@@ -25,7 +25,7 @@ function Ship:Create(map)
         time = 0,
         weapon = Weapon:Create('laser', map),
         --weapon = Weapon:Create('spread', map),
-        shield = nil,
+        --shield = Shield:Create(),
         map = map
     }
 
@@ -147,10 +147,17 @@ function Ship:handleInput(dt)
         self.ySpeed = self.topSpeed
     else
         --enable to have ship stay still on map when scrolling is on
-        self.ySpeed = -self.map.scrollSpeed
+        if self.map.ty <= 0 then
+            self.ySpeed = -self.map.scrollSpeed
         --enable to have ship stay still on map when scholling is off
-        --self.ySpeed = 0
+        else
+            self.ySpeed = 0
+        end 
     end
+
+    --if self.map.ty > 0 then
+        --self.ySpeed = 0
+    --end
 
     -- handling ships fire
     if input:down('fire') then
@@ -163,7 +170,7 @@ function Ship:handleInput(dt)
     -- check 'down' if it's enabled only when held down
     -- check 'up' to deactivate
     if input:pressed('shield') then
-        
+        self.shield:activate()
     end
 
 end

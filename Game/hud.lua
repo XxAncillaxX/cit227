@@ -36,5 +36,6 @@ function HUD:draw()
     -- indicator for active weapon
     self.bar:draw()
     love.graphics.print(#self.map.bullets, 10, 30)
+    --love.graphics.print(self.ship.shield, 10, 60)
     love.graphics.printf(self.game.points, 10, 10, self.game.width - 20, 'center')
 end

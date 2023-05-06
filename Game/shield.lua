@@ -17,7 +17,7 @@ end
 
 
 function Shield:activate()
-    self.active = true
+        self.active = true
 end
 
 function Shield:deactivate()
@@ -29,7 +29,6 @@ function Shield:takeDamage(points)
 end
 
 function Shield:update(dt)
-    if self.active then
         -- only subtract when active
     end
 end

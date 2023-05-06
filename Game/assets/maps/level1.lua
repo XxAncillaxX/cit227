@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 4,
-  nextobjectid = 135,
+  nextobjectid = 136,
   properties = {
     ["background"] = "background 2",
     ["music"] = "frenetic",
@@ -350,6 +350,35 @@ return {
           }
         }
       }
+    },
+    {
+      name = "BossEnemy",
+      firstgid = 25,
+      class = "",
+      tilewidth = 960,
+      tileheight = 144,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "../graphics/spritesheets/boss.png",
+      imagewidth = 960,
+      imageheight = 144,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 960,
+        height = 144
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -805,8 +834,8 @@ return {
           name = "",
           type = "collectible",
           shape = "rectangle",
-          x = 48.5,
-          y = 65,
+          x = 128.5,
+          y = 32.5,
           width = 16,
           height = 16,
           rotation = 0,

@@ -127,7 +127,9 @@ function Map:addShip(ship)
 end
 
 function Map:update(dt)
-    self.ty = self.ty + self.scrollSpeed * dt
+    if self.ty < 0 then
+        self.ty = self.ty + self.scrollSpeed * dt
+    end
     self.tilemap:update(dt)
 end
 
