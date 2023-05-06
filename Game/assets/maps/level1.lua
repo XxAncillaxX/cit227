@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 4,
-  nextobjectid = 18,
+  nextobjectid = 24,
   properties = {
     ["background"] = "background 2",
     ["music"] = "frenetic",
@@ -95,6 +95,174 @@ return {
             ["points"] = 500,
             ["row"] = 4,
             ["type"] = "weapon"
+          }
+        }
+      }
+    },
+    {
+      name = "enemySmall",
+      firstgid = 17,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 2,
+      image = "../graphics/spritesheets/enemy-small.png",
+      imagewidth = 32,
+      imageheight = 16,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 2,
+      tiles = {
+        {
+          id = 0,
+          type = "enemy",
+          properties = {
+            ["frameColumn"] = 0,
+            ["frameDuration"] = 0.15,
+            ["frameRow"] = 1,
+            ["frames"] = "1-2",
+            ["health"] = 2,
+            ["image"] = "enemy-small.png",
+            ["weapon"] = "laser"
+          }
+        },
+        {
+          id = 1,
+          type = "enemy",
+          properties = {
+            ["frameColumn"] = 0,
+            ["frameDuration"] = 0.15,
+            ["frameRow"] = 1,
+            ["frames"] = "1-2",
+            ["health"] = 2,
+            ["image"] = "enemy-small.png",
+            ["weapon"] = "laser"
+          }
+        }
+      }
+    },
+    {
+      name = "enemyBig",
+      firstgid = 19,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 2,
+      image = "../graphics/spritesheets/enemy-big.png",
+      imagewidth = 64,
+      imageheight = 32,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 2,
+      tiles = {
+        {
+          id = 0,
+          type = "enemy",
+          properties = {
+            ["frameColumn"] = 0,
+            ["frameDuration"] = 0.15,
+            ["frameRow"] = 1,
+            ["frames"] = "1-2",
+            ["health"] = 6,
+            ["image"] = "enemy-big.png",
+            ["weapon"] = "plasma"
+          }
+        },
+        {
+          id = 1,
+          type = "enemy",
+          properties = {
+            ["frameColumn"] = 0,
+            ["frameDuration"] = 0.15,
+            ["frameRow"] = 1,
+            ["frames"] = "1-2",
+            ["health"] = 6,
+            ["image"] = "enemy-big.png",
+            ["weapon"] = "plasma"
+          }
+        }
+      }
+    },
+    {
+      name = "enemyMedium",
+      firstgid = 21,
+      class = "",
+      tilewidth = 32,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 2,
+      image = "../graphics/spritesheets/enemy-medium.png",
+      imagewidth = 64,
+      imageheight = 16,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 2,
+      tiles = {
+        {
+          id = 0,
+          type = "enemy",
+          properties = {
+            ["frameColumn"] = 0,
+            ["frameDuration"] = 0.15,
+            ["frameRow"] = 1,
+            ["frames"] = "1-2",
+            ["health"] = 3,
+            ["image"] = "enemy-medium.png",
+            ["weapon"] = "spread"
+          }
+        },
+        {
+          id = 1,
+          type = "enemy",
+          properties = {
+            ["frameColumn"] = 0,
+            ["frameDuration"] = 0.15,
+            ["frameRow"] = 1,
+            ["frames"] = "1-2",
+            ["health"] = 3,
+            ["image"] = "enemy-medium.png",
+            ["weapon"] = "spread"
           }
         }
       }
@@ -656,6 +824,50 @@ return {
             ["points"] = 0,
             ["row"] = 3,
             ["type"] = "weapon"
+          }
+        },
+        {
+          id = 19,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 112,
+          y = 6208,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          gid = 17,
+          visible = true,
+          properties = {
+            ["frameColumn"] = 0,
+            ["frameDuration"] = 0.15,
+            ["frameRow"] = 1,
+            ["frames"] = "1-2",
+            ["health"] = 2,
+            ["image"] = "enemy-small.png",
+            ["weapon"] = "laser"
+          }
+        },
+        {
+          id = 23,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 160,
+          y = 6208,
+          width = 32,
+          height = 16,
+          rotation = 0,
+          gid = 21,
+          visible = true,
+          properties = {
+            ["frameColumn"] = 0,
+            ["frameDuration"] = 0.15,
+            ["frameRow"] = 1,
+            ["frames"] = "1-2",
+            ["health"] = 3,
+            ["image"] = "enemy-medium.png",
+            ["weapon"] = "spread"
           }
         }
       }

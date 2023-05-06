@@ -37,6 +37,18 @@
             "scaleInDock": 2,
             "scaleInEditor": 4
         },
+        "enemyBig.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "enemyMedium.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "enemySmall.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 11
+        },
         "level1.tmx": {
             "scale": 3,
             "selectedLayer": 1,
@@ -48,7 +60,7 @@
     },
     "last.exportedFilePath": "C:/Users/mhart/OneDrive/Documents/Cit227/Game/assets/maps",
     "last.externalTilesetPath": "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps",
-    "last.imagePath": "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/graphics/others/asteroid-fighter/PNG/asteroids",
+    "last.imagePath": "C:/Users/mhart/OneDrive/Documents/Cit227/Game/assets/graphics/spritesheets",
     "map.height": 400,
     "map.lastUsedExportFilter": "Lua files (*.lua)",
     "map.lastUsedFormat": "tmx",
@@ -57,10 +69,13 @@
         "level1.tmx"
     ],
     "project": "maps.tiled-project",
-    "property.type": "string",
+    "property.type": "weapon",
     "recentFiles": [
-        "level1.tmx",
+        "enemySmall.tsx",
+        "enemyMedium.tsx",
+        "enemyBig.tsx",
         "collectibles.tsx",
+        "level1.tmx",
         "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/level1.tmx",
         "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/obstacle.tsx",
         "C:/Users/mhart/OneDrive/Documents/APSpaceShooter/assets/maps/collectible.tsx"
@@ -68,8 +83,8 @@
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
-        "height": 6,
-        "width": 6
+        "height": 16,
+        "width": 32
     },
-    "tileset.type": 1
+    "tileset.type": 0
 }

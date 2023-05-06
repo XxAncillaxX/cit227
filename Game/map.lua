@@ -46,6 +46,13 @@ function Map:Create(filename, gameHeight)
             end
         end
         -- update enemies
+        for i=#this.enemies, 1, -1 do
+            local e = this.enemies[i]
+            e:update(dt)
+            --if e:needsRemoved(this.ty) then
+                --table.remove(this.enemies,i)
+            --end
+        end
     end
 
     function sprite_layer:draw()
@@ -54,6 +61,9 @@ function Map:Create(filename, gameHeight)
             c:draw()
         end
         -- draw enemies
+        for i, e in ipairs(this.enemies) do
+            e:draw()
+        end
         -- draw bullets
         for i, b in ipairs(this.bullets) do
             b:draw()
@@ -81,7 +91,9 @@ function Map:Create(filename, gameHeight)
             this.spawnPoint.y = object.y
             -- adding the ship to the map and passing the information needed to set it in place
             --this.world:add(this.ship, object.x, object.y, this.ship.w, this.ship.h)
-            
+        elseif (object.type) == "enemy" then
+            local e = Enemy:Create(object)
+            table.insert(this.enemies, e)
         end
     end
     return(this)

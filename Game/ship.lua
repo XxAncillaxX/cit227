@@ -92,6 +92,7 @@ function Ship:update(dt)
                 self.map:removeaCollectible(c.other)
                 game:addPoints(c.other.points)
             elseif c.other.type =="bullet" then
+                -- if the bullet is an enemy bullet
                 -- if shield is actie, take damage
                 -- otherwise ship takes damage
             elseif c.other.type == "enemy" then

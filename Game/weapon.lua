@@ -42,14 +42,16 @@ function Weapon:swapBullet()
 end
 ]]
 
-function Weapon:fire()
+function Weapon:fire(enemy)
+    local e = enemy or false --
     if self.bulletType == "laser" then
-        self:fireLaser()
+        self:fireLaser(e)
     elseif self.bulletType == "spread" then
-        self:fireSpread()
+        self:fireSpread(e)
     elseif self.bulletType == "plasma" then
-        self:firePlasma()
+        self:firePlasma(e)
     end
+    self.timer = self.cooldown
 end
 
 function Weapon:firePlasma()

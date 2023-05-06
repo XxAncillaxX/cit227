@@ -60,6 +60,56 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 4,
+            "members": [
+                {
+                    "name": "frameColumn",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "frameDuration",
+                    "type": "float",
+                    "value": 0.15
+                },
+                {
+                    "name": "frameRow",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "frames",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "health",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "image",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "weapon",
+                    "propertyType": "weapon",
+                    "type": "string",
+                    "value": "laser"
+                }
+            ],
+            "name": "enemy",
+            "type": "class",
+            "useAs": [
+                "property",
+                "object",
+                "tile"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 3,
             "members": [
                 {
@@ -104,6 +154,19 @@
                 "wangcolor",
                 "wangset"
             ]
+        },
+        {
+            "id": 5,
+            "name": "weapon",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "laser",
+                "spread",
+                "machineGun",
+                "plasma"
+            ],
+            "valuesAsFlags": false
         }
     ]
 }
