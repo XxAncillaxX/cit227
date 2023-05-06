@@ -143,9 +143,9 @@ function Ship:handleInput(dt)
         self.ySpeed = self.topSpeed
     else
         --enable to have ship stay still on map when scrolling is on
-        --self.ySpeed = -self.map.scrollSpeed
+        self.ySpeed = -self.map.scrollSpeed
         --enable to have ship stay still on map when scholling is off
-        self.ySpeed = 0
+        --self.ySpeed = 0
     end
 
     -- handling ships fire

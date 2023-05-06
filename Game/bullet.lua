@@ -59,3 +59,21 @@ function Bullet:draw()
         self.animation:draw(self.image, self.x, self.y)
         --self.animation2:draw(self.image, self.x, self.y)
 end
+
+function Bullet:needsRemoved(ty)
+    -- check up
+    if (self.ySpeed < 0 and self.y < ty-16) then
+        return (true)
+    -- check down
+    elseif (self.ySpeed > 0 and self.y > ty + gameHeight + 16) then
+        return (true)
+    -- check left
+    elseif (self.xSpeed < 0 and self.x < -16) then
+        return (true)
+    -- check right
+    elseif (self.xSpeed > 0 and self.x > gameWidth + 16) then
+        return (true)
+    else
+        return (false)
+    end
+end

@@ -16,7 +16,7 @@ function love.load()
     ship = Ship:Create(map)
     -- Storing background image in to a variable
     bg = love.graphics.newImage("assets/graphics/backgrounds/parallax-space-background2.png")
-    hud = HUD:Create(game, ship)
+    hud = HUD:Create(game, ship, map)
     -- table to store bullets as they are created
     --bullets = {}
 end--load

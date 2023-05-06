@@ -11,10 +11,11 @@ pgBarParams = {
     fgColor = {0.5, 0.5, 0.9}
 }
 
-function HUD:Create(game, ship)
+function HUD:Create(game, ship, map)
     local this = {
         game = game,
         ship = ship,
+        map = map,
         bar = ProgressBar:Create(pgBarParams)
     }
 
@@ -34,5 +35,6 @@ function HUD:draw()
     -- shield (duration, durability, etc)
     -- indicator for active weapon
     self.bar:draw()
+    love.graphics.print(#self.map.bullets, 10, 30)
     love.graphics.printf(self.game.points, 10, 10, self.game.width - 20, 'center')
 end

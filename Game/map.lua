@@ -38,8 +38,12 @@ function Map:Create(filename, gameHeight)
             c:update(dt)
         end
         -- update bullets
-        for i, b in ipairs(this.bullets) do
+        for i=#this.bullets, 1, -1 do
+            local b = this.bullets[i]
             b:update(dt)
+            if b:needsRemoved(this.ty) then
+                table.remove(this.bullets,i)
+            end
         end
         -- update enemies
     end
@@ -90,7 +94,7 @@ function Map:addShip(ship)
 end
 
 function Map:update(dt)
-    --self.ty = self.ty + self.scrollSpeed * dt
+    self.ty = self.ty + self.scrollSpeed * dt
     self.tilemap:update(dt)
 end
 
